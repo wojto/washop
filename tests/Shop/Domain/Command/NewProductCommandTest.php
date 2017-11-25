@@ -12,6 +12,7 @@ use Shop\Domain\Model\ProductId;
 use Shop\Domain\Model\User;
 use Shop\Domain\Transport\MailerInterface;
 use Shop\Infrastructure\Repository\InMemoryProductsRepository;
+use Shop\Infrastructure\Transport\DummyMailer;
 use Shop\Infrastructure\Validator\SatisfiedValidator;
 
 class AdminControllerTest extends TestCase
@@ -35,7 +36,7 @@ class AdminControllerTest extends TestCase
         // set handler parameters
         $repository = new InMemoryProductsRepository();
         $validator = new SatisfiedValidator();
-        $mailer = \Mockery::mock(MailerInterface::class);
+        $mailer = new DummyMailer();
 
         // create product handler
         $producthandler = new NewProductHandler(

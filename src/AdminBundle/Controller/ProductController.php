@@ -46,7 +46,7 @@ class ProductController extends Controller
                 // set succesfully message
                 $this->addFlash('success', $this->get('translator')->trans('Produkt został dodany.'));
             } catch (InvalidProductException $e) {
-                $this->addFlash('error', $form->getErrors(true, true));
+                $this->addFlash('error', nl2br($e->getMessage()));
             }
         }
 

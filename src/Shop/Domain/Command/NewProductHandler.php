@@ -70,7 +70,7 @@ class NewProductHandler
         $errors = $this->validator->validate($product);
         if ($errors->count()) {
             // product have errors, throw exception
-            throw InvalidProductException::forId(new ProductId($product->getId()));
+            throw InvalidProductException::forId(new ProductId($product->getId()), $this->prepareErrors($errors));
         }
 
         // save product by repository
@@ -78,5 +78,22 @@ class NewProductHandler
 
         // sending e-mail notification
         $this->mailer->sendNewProductEmail($product);
+    }
+
+    /**
+     * Preparint error messages
+     *
+     * @param $errors
+     */
+    private function prepareErrors($errors)
+    {
+        $messages = [];
+
+        // iterate through errors
+        foreach ($errors as $error) {
+            $messages[] = $error->getPropertyPath().': '.$error->getMessage();
+        }
+
+        return $messages;
     }
 }

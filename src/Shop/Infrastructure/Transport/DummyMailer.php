@@ -17,7 +17,7 @@ class DummyMailer implements MailerInterface
      */
     public function sendNewProductEmail(ProductInterface $product)
     {
-        $this->send($message);
+        $this->send('');
     }
 
     /**
