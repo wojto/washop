@@ -1,0 +1,31 @@
+parameters:
+    #parameter_name: value
+
+services:
+    app.menu_builder:
+        class: AppBundle\Menu\MenuBuilder
+        arguments: ['@knp_menu.factory', '@security.authorization_checker', '@request_stack']
+        tags:
+            - { name: knp_menu.menu_builder, method: createAdminMenu, alias: admin }
+    app.money_format_extension:
+        class: AppBundle\Twig\MoneyFormatExtension
+        public: false
+        tags:
+            - { name: twig.extension }
+    # pass currencies to PriceType form
+    app.form.price_type:
+        class: AppBundle\Form\PriceType
+        arguments: [['PLN', 'EUR', 'USD']]
+        tags:
+            - { name: form.type }
+    shop.product_handler:
+        class: Shop\Domain\Command\NewProductHandler
+        arguments: ['@shop.product_repository', '@validator', '@shop.mailer']
+    shop.product_repository:
+        class: Shop\Infrastructure\Repository\Doctrine\ProductRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - Shop\Domain\Model\Product
+    shop.mailer:
+        class: Shop\Infrastructure\Transport\Mailer
+        arguments: ['@swiftmailer.mailer', '@twig']

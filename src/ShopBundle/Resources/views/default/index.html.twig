@@ -1,0 +1,20 @@
+{% extends 'ShopBundle::base.html.twig' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row m-t-md">
+        <div class="col-md-12">
+            {{ 'Witamy w naszym sklepie, zapraszamy do zakupów.'|trans }}
+        </div>
+    </div>
+
+    <div class="row m-t">
+        <h4 class="col-md-12">
+            {{ 'Lista produktów'|trans }}
+        </h4>
+    </div>
+    {{ include('ShopBundle:product:_product_list.html.twig', {
+        products: products
+    }) }}
+</div>
+{% endblock %}

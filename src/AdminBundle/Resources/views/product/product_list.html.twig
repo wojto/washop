@@ -1,0 +1,61 @@
+{% extends 'AdminBundle::base.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <h3 class="col-md-12">
+                {{ 'Lista produktów'|trans }}
+            </h3>
+        </div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-5">
+                        {{ 'Identyfikator'|trans }}
+                    </th>
+                    <th class="col-md-5">
+                        {{ 'Nazwa'|trans }}
+                    </th>
+                    <th class="col-md-2 text-center">
+                        {{ 'Data dodania'|trans }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td class="col-md-5">
+                            {{ product.id }}
+                        </td>
+                        <td class="col-md-5">
+                            {{ product.name }}
+                        </td>
+                        <td class="col-md-2 text-center">
+                            {{ product.addedAt|date('Y-m-d') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <td colspan="3" class="col-md-12">{{ 'Nie znaleziono produktów.'|trans }}</td>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3" class="col-md-12">{{ 'Liczba produktów' }}: {{ products.getTotalItemCount }}</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="navigation">
+            {{ knp_pagination_render(products) }}
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <a href="{{ path('admin_product_add') }}" class="btn btn-primary btn-sm">
+                    {{ 'Dodaj nowy produkt'|trans }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

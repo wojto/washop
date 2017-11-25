@@ -1,0 +1,66 @@
+Shop\Domain\Model\Product:
+    type: entity
+    table: product
+    repositoryClass: Shop\Infrastructure\Repository\Doctrine\ProductRepository
+    indexes:
+        user_id:
+            columns:
+                - user_id
+    id:
+        id:
+            type: uuid
+            nullable: false
+            options:
+                comment: 'Product identifier'
+            id: true
+            generator:
+                strategy: none
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+                comment: 'Product name'
+        description:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+                comment: 'Product description'
+        priceAmount:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 2
+            options:
+                comment: 'Product price value'
+            column: price_amount
+        priceCurrency:
+            type: string
+            nullable: false
+            length: 3
+            options:
+                fixed: false
+                comment: 'Product price currency'
+            column: price_currency
+        addedAt:
+            type: datetime
+            nullable: false
+            options:
+                comment: 'Add date'
+            column: added_at
+    manyToOne:
+        user:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

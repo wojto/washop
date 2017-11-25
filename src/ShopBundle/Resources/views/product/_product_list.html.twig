@@ -1,0 +1,27 @@
+<div class="row">
+    {% for key,product in products %}
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        {{ product.name }}
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    {{ product.description|nl2br }}
+                    <div class="text-right text-danger">
+                        <b>{{ product.price|money_format }}</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ (key + 1) % 3 ? '' : '<div class="clearfix"></div>' }}
+    {% else %}
+        <div class="alert alert-danger">{{ 'Nie znaleziono produktów.'|trans }}</div>
+    {% endfor %}
+</div>
+
+<div class="navigation">
+    {{ knp_pagination_render(products) }}
+</div>

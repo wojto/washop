@@ -1,0 +1,14 @@
+{% block price_widget %}
+    {% spaceless %}
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_widget(form.price_amount) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_widget(form.price_currency) }}
+                {{ form_errors(form.price_amount) }}
+                {{ form_errors(form.price_currency) }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock %}

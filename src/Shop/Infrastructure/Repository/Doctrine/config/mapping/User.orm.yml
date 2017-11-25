@@ -1,0 +1,56 @@
+Shop\Domain\Model\User:
+    type: entity
+    table: user
+    repositoryClass: Shop\Infrastructure\Repository\Doctrine\UserRepository
+    uniqueConstraints:
+        email:
+            columns:
+                - email
+    id:
+        id:
+            type: uuid
+            nullable: false
+            options:
+                comment: 'User identifier'
+            id: true
+            generator:
+                strategy: none
+    fields:
+        email:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+                comment: 'E-mail address'
+        algorithm:
+            type: string
+            nullable: false
+            length: 128
+            options:
+                fixed: false
+                comment: 'Password algorithm'
+                default: '''sha1'''
+        salt:
+            type: string
+            nullable: true
+            length: 128
+            options:
+                fixed: false
+                comment: 'Password salt'
+                default: 'NULL'
+        password:
+            type: string
+            nullable: true
+            length: 40
+            options:
+                fixed: false
+                comment: 'Hashed password'
+                default: 'NULL'
+        addedAt:
+            type: datetime
+            nullable: false
+            options:
+                comment: 'Add date'
+            column: added_at
+    lifecycleCallbacks: {  }

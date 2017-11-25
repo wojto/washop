@@ -1,0 +1,99 @@
+@import 'mixins';
+@import 'variables';
+
+/* custom bootstrap theme styles */
+.btn-outline {
+  color: inherit;
+  background-color: transparent;
+  transition: all .5s;
+}
+.m-r-sm {
+  margin-right: 10px;
+}
+.m-t {
+  margin-top: 15px;
+}
+
+/* header */
+#main-header {
+  border-bottom: 1px solid $color-menu-background;
+
+  a {
+    line-height: 40px;
+    margin: 15px;
+  }
+}
+
+/* menu */
+#main-menu {
+  height: $content-min-height;
+  background-color: $color-menu-background;
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &.menu_level_1 {
+      li {
+        margin: 0 0 0 23px;
+      }
+    }
+  }
+
+  > ul {
+    li {
+      a {
+        color: $color-menu;
+        line-height: 35px;
+        display: block;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &:hover {
+          background-color: $color-menu-hover;
+          border-right: 5px solid $color-form-fields-border;
+        }
+      }
+    }
+
+    > li {
+      a {
+        padding: 0 10px;
+      }
+
+      &.current {
+        > a {
+          border-right: 5px solid $color-menu-active;
+          background-color: $color-menu-hover;
+        }
+      }
+    }
+  }
+}
+
+/* main content */
+#main-content {
+  min-height: $content-min-height;
+  padding: 0 15px;
+  padding-bottom: 20px;
+
+  h3 {
+    padding-bottom: 7px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $color-menu;
+  }
+}
+
+/* footer */
+#main-footer {
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid $color-menu-background;
+  line-height: 30px;
+  color: $color-menu-background;
+  overflow: auto;
+}

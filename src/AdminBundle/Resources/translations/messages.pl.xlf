@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="pl" target-language="pl" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="f9a801bfa8b8b63688bf0e31f8f84a06" resname="Panel administracyjny">
+        <source>Panel administracyjny</source>
+        <target>Panel administracyjny</target>
+      </trans-unit>
+      <trans-unit id="ca7d9f5c71e4ab4c478ea25923e248f0" resname="wyloguj">
+        <source>wyloguj</source>
+        <target>wyloguj</target>
+      </trans-unit>
+      <trans-unit id="31aaa11153c9b8cde51aa9064100daf0" resname="Copyright &amp;copy; 2000 - %year% washop.pl">
+        <source>Copyright &amp;copy; 2000 - %year% washop.pl</source>
+        <target><![CDATA[Copyright &copy; 2000 - %year% washop.pl]]></target>
+      </trans-unit>
+      <trans-unit id="29f1e7c7477f573c71c9ed854fa18164" resname="Lista użytkowników">
+        <source>Lista użytkowników</source>
+        <target>Lista użytkowników</target>
+      </trans-unit>
+      <trans-unit id="be73f2abe500c2e3bc569f8e7f60bd75" resname="Identyfikator">
+        <source>Identyfikator</source>
+        <target>Identyfikator</target>
+      </trans-unit>
+      <trans-unit id="79f061725d6a76d4e58500746e8a2b71" resname="Adres e-mail">
+        <source>Adres e-mail</source>
+        <target>Adres e-mail</target>
+      </trans-unit>
+      <trans-unit id="0a5a84180a5a788e9ce3556c86fdf4b1" resname="Data dodania">
+        <source>Data dodania</source>
+        <target>Data dodania</target>
+      </trans-unit>
+      <trans-unit id="0575c61901d77839cffbaaed43819727" resname="Brak użytkowników.">
+        <source>Brak użytkowników.</source>
+        <target>Brak użytkowników.</target>
+      </trans-unit>
+      <trans-unit id="03b8c6e3b8645e495ea357d8a6086162" resname="Logowanie">
+        <source>Logowanie</source>
+        <target>Logowanie</target>
+      </trans-unit>
+      <trans-unit id="be266956e359bf29c824e9b0386b70b0" resname="Hasło">
+        <source>Hasło</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="ba45557029cff1f722e7e8c493f4f39c" resname="Zaloguj">
+        <source>Zaloguj</source>
+        <target>Zaloguj</target>
+      </trans-unit>
+      <trans-unit id="9f233d65d8d689ed97cedfc10cea21a9" resname="Wróć do serwisu">
+        <source>Wróć do serwisu</source>
+        <target>Wróć do serwisu</target>
+      </trans-unit>
+      <trans-unit id="fcf80743bc07c67b2fa33fe570130905" resname="Strona główna">
+        <source>Strona główna</source>
+        <target>Strona główna</target>
+      </trans-unit>
+      <trans-unit id="fa0348ae53eccba5a20967ac14182944" resname="Witaj w panelu administracyjnym">
+        <source>Witaj w panelu administracyjnym</source>
+        <target>Witaj w panelu administracyjnym</target>
+      </trans-unit>
+      <trans-unit id="096e5791ef1dcb7858835b0144b0768a" resname="Przejdź do sklepu">
+        <source>Przejdź do sklepu</source>
+        <target>Przejdź do sklepu</target>
+      </trans-unit>
+      <trans-unit id="43d4202741fb5390c8dc4a84033eb769" resname="Przejdź do panelu administracyjnego">
+        <source>Przejdź do panelu administracyjnego</source>
+        <target>Przejdź do panelu administracyjnego</target>
+      </trans-unit>
+      <trans-unit id="f7c455abefd0011ed6b8d170a1884f4b" resname="Edycja produktu">
+        <source>Edycja produktu</source>
+        <target>Edycja produktu</target>
+      </trans-unit>
+      <trans-unit id="91bab369f6a53eb0ae0a325f281cb8cc" resname="Usuwanie produktu">
+        <source>Usuwanie produktu</source>
+        <target>Usuwanie produktu</target>
+      </trans-unit>
+      <trans-unit id="eafe8bbda6fc37dd66e3aac21c5fc186" resname="Czy na pewno chcesz usunąć ten produkt?">
+        <source>Czy na pewno chcesz usunąć ten produkt?</source>
+        <target>Czy na pewno chcesz usunąć ten produkt?</target>
+      </trans-unit>
+      <trans-unit id="6d4b507e74e86897b27db962d46f04de" resname="Tak, usuń">
+        <source>Tak, usuń</source>
+        <target>Tak, usuń</target>
+      </trans-unit>
+      <trans-unit id="2081126cf559ec640e7fae0f715184f5" resname="Nie, powróć do listy">
+        <source>Nie, powróć do listy</source>
+        <target>Nie, powróć do listy</target>
+      </trans-unit>
+      <trans-unit id="096caa3c174b598a2ee7e28393940106" resname="Lista produktów">
+        <source>Lista produktów</source>
+        <target>Lista produktów</target>
+      </trans-unit>
+      <trans-unit id="2117322584447a811fefe2832d7dbf97" resname="Nazwa">
+        <source>Nazwa</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="19811d6fe51263d30e143d5886807e79" resname="edytuj">
+        <source>edytuj</source>
+        <target>edytuj</target>
+      </trans-unit>
+      <trans-unit id="d8afac7b06dc96cfde1085411a041002" resname="usuń">
+        <source>usuń</source>
+        <target>usuń</target>
+      </trans-unit>
+      <trans-unit id="e45d135f03d17c002a5379555d21f82e" resname="Nie znaleziono produktów.">
+        <source>Nie znaleziono produktów.</source>
+        <target>Nie znaleziono produktów.</target>
+      </trans-unit>
+      <trans-unit id="c1d1fd097195736670f52fe2d20696e4" resname="Dodaj nowy produkt">
+        <source>Dodaj nowy produkt</source>
+        <target>Dodaj nowy produkt</target>
+      </trans-unit>
+      <trans-unit id="3b27e427933677264469569d230c95fe" resname="Dodano nowy produkt do bazy.">
+        <source>Dodano nowy produkt do bazy.</source>
+        <target>Dodano nowy produkt do bazy.</target>
+      </trans-unit>
+      <trans-unit id="3130aac8b37e51996f42d04675166815" resname="Zobacz">
+        <source>Zobacz</source>
+        <target>Zobacz</target>
+      </trans-unit>
+      <trans-unit id="eefd425221c5c9e9d0d8b6e8bb7a90c4" resname="Zapisz">
+        <source>Zapisz</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="2077e66f41ecc06646f43c584df60ed5" resname="Powrót do listy">
+        <source>Powrót do listy</source>
+        <target>Powrót do listy</target>
+      </trans-unit>
+      <trans-unit id="f43e822fcc3b7b41d786d10d637543e6" resname="Dodawanie nowego produktu">
+        <source>Dodawanie nowego produktu</source>
+        <target>Dodawanie nowego produktu</target>
+      </trans-unit>
+      <trans-unit id="c47bbe64b180d4757270fec03bc72d0a" resname="Użytkownicy">
+        <source>Użytkownicy</source>
+        <target>Użytkownicy</target>
+      </trans-unit>
+      <trans-unit id="0c31463e668e001e18224cfbf1ccd558" resname="Produkty">
+        <source>Produkty</source>
+        <target>Produkty</target>
+      </trans-unit>
+      <trans-unit id="aff2e61beb2e03e79e5b825655a79b09" resname="Opis">
+        <source>Opis</source>
+        <target>Opis</target>
+      </trans-unit>
+      <trans-unit id="6755e6b3457f9e8447566dab2996aaf1" resname="Cena">
+        <source>Cena</source>
+        <target>Cena</target>
+      </trans-unit>
+      <trans-unit id="446687ea2db1ada75be5ed053be77f59" resname="PLN">
+        <source>PLN</source>
+        <target>PLN</target>
+      </trans-unit>
+      <trans-unit id="a055562bdb59ad8ba9cc680367308118" resname="EUR">
+        <source>EUR</source>
+        <target>EUR</target>
+      </trans-unit>
+      <trans-unit id="3518f8944d42212dd37daffe097d216e" resname="USD">
+        <source>USD</source>
+        <target>USD</target>
+      </trans-unit>
+      <trans-unit id="2fcb2d53a9df3929748417cd4001a252" resname="Zmiany zostały zapisane.">
+        <source>Zmiany zostały zapisane.</source>
+        <target>Zmiany zostały zapisane.</target>
+      </trans-unit>
+      <trans-unit id="4ddcd6d9d8ba049037e30f7a49481801" resname="dodaj nowy produkt">
+        <source>dodaj nowy produkt</source>
+        <target>dodaj nowy produkt</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

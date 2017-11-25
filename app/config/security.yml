@@ -1,0 +1,49 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        Shop\Domain\Model\User:
+            algorithm:        sha1
+            encode_as_base64: false
+            iterations:       1
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        user_db:
+            entity:
+                class: Shop\Domain\Model\User
+                property: email
+#        in_memory:
+#            memory: ~
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            form_login:
+                login_path: admin_login
+                check_path: admin_login
+                always_use_default_target_path: false
+                default_target_path:            admin_homepage
+                target_path_parameter:          _target_path
+                use_referer:                    false
+
+            logout:
+                path:   admin_logout
+                target: admin_login
+                invalidate_session: false
+
+    access_control:
+        # require ROLE_ADMIN for /admin*
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, roles: ROLE_USER }

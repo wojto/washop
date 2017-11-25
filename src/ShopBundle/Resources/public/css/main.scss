@@ -1,0 +1,30 @@
+@import 'mixins';
+@import 'variables';
+
+.clearfix {
+  @include clearfix();
+}
+
+.m-t {
+  margin-top: 15px;
+}
+.m-t-md {
+  margin-top: 20px;
+}
+.m-t-lg {
+  margin-top: 30px;
+}
+.m-t-xl {
+  margin-top: 50px;
+}
+
+#main-header {
+  background-color: $color-menu-background;
+  color: $color-white;
+
+  a {
+    color: $color-white;
+    line-height: 40px;
+    margin: 15px;
+  }
+}
