@@ -1,7 +1,7 @@
 <div class="row">
     {% for key,product in products %}
-        <div class="col-md-4">
-            <div class="panel panel-default">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         {{ product.name }}
@@ -9,8 +9,15 @@
                 </div>
                 <div class="panel-body">
                     {{ product.description|nl2br }}
-                    <div class="text-right text-danger">
-                        <b>{{ product.price|money_format }}</b>
+                    <div class="row m-t">
+                        <div class="col-md-6 text-info">
+                            <small>
+                                {{ 'Dodano' }}: {{ product.addedAt|date('Y-m-d') }}
+                            </small>
+                        </div>
+                        <div class="col-md-6 text-right text-danger">
+                            <b>{{ product.price|money_format }}</b>
+                        </div>
                     </div>
                 </div>
             </div>
