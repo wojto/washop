@@ -15,7 +15,8 @@ services:
     # pass currencies to PriceType form
     app.form.price_type:
         class: AppBundle\Form\PriceType
-        arguments: [['PLN', 'EUR', 'USD']]
+        arguments:
+            - '%shop.currencies%'
         tags:
             - { name: form.type }
     shop.product_handler:
