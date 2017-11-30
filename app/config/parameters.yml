@@ -1,0 +1,13 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: washop
+    database_user: washop_user
+    database_password: 6e3be413
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 33880bbca1f97976a32e96954405214522f965c6
+    shop.currencies: ['PLN', 'EUR', 'USD']

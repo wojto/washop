@@ -15,10 +15,15 @@ use Shop\Infrastructure\Repository\InMemoryProductsRepository;
 use Shop\Infrastructure\Transport\DummyMailer;
 use Shop\Infrastructure\Validator\YmlValidator;
 
-class AdminControllerTest extends TestCase
+/**
+ * Class NewProductCommandTest
+ *
+ * @package Tests\Domain\Command
+ */
+class NewProductCommandTest extends TestCase
 {
     /**
-     * Test success adding product
+     * Test of successfully adding product
      */
     public function testProductWasCreatedAndReturnedSuccesfully()
     {
@@ -57,7 +62,8 @@ class AdminControllerTest extends TestCase
     }
 
     /**
-     * Test success adding product
+     * Test of failed adding product
+     *
      * @expectedException Shop\Domain\Exception\InvalidProductException
      */
     public function testNewProductHasNoName()
@@ -83,7 +89,8 @@ class AdminControllerTest extends TestCase
     }
 
     /**
-     * Test success adding product
+     * Test of failed adding product
+     *
      * @expectedException Shop\Domain\Exception\InvalidProductException
      */
     public function testNewProductHasTooShortDescription()
