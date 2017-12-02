@@ -41,7 +41,7 @@ class ProductController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 // handle by product handler
-                $this->get('shop.product_handler')->handle($form->getData());
+                $this->get('Shop\Domain\Command\NewProductHandler')->handle($form->getData());
 
                 // set succesfully message
                 $this->addFlash('success', $this->get('translator')->trans('Produkt został dodany.'));

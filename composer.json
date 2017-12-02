@@ -20,13 +20,13 @@
     },
     "require": {
         "php": ">=5.5.9",
-        "doctrine/annotations": "1.4.*",
+        "doctrine/annotations": "^1.4",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
-        "doctrine/orm": "2.5.6",
+        "doctrine/orm": "^2.5.6",
         "incenteev/composer-parameter-handler": "^2.0",
         "knplabs/knp-menu-bundle": "^2.1",
-        "knplabs/knp-menu": "2.2",
+        "knplabs/knp-menu": "^2.2",
         "knplabs/knp-paginator-bundle": "^2.6",
         "moneyphp/money": "^3.0",
         "ramsey/uuid": "^3.7",
@@ -37,7 +37,7 @@
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",
-        "symfony/symfony": "3.2.*",
+        "symfony/symfony": "^3.2",
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
