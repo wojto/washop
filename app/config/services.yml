@@ -1,5 +1,6 @@
 parameters:
     #parameter_name: value
+    container.autowiring.strict_mode: true
 
 services:
     _defaults:
