@@ -2,7 +2,8 @@
 
 namespace Shop\Infrastructure\Repository\Doctrine;
 
-use Doctrine\ORM\EntityRepository;
+//use Doctrine\ORM\EntityRepository;
+use Doctrine\ODM\MongoDB\DocumentRepository;
 use Shop\Domain\Model\ProductId;
 use Shop\Domain\Model\ProductInterface;
 use Shop\Domain\Repository\ProductRepositoryInterface;
@@ -12,7 +13,7 @@ use Shop\Domain\Repository\ProductRepositoryInterface;
  *
  * @package Shop\Infrastructure\Repository\Doctrine
  */
-class ProductRepository extends EntityRepository implements ProductRepositoryInterface
+class ProductRepository extends DocumentRepository implements ProductRepositoryInterface
 {
     /**
      * Return product from database

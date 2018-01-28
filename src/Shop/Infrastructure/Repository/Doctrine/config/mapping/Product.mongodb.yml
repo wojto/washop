@@ -1,6 +1,8 @@
 Shop\Domain\Model\Product:
+    repositoryClass: Shop\Infrastructure\Repository\Doctrine\ProductRepository
     fields:
         id:
+            type: id
             id:  true
         name:
             type: string

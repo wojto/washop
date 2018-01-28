@@ -1,6 +1,8 @@
 Shop\Domain\Model\User:
+    repositoryClass: Shop\Infrastructure\Repository\Doctrine\UserRepository
     fields:
         id:
+            type: id
             id:  true
         email:
             type: string

@@ -76,6 +76,11 @@ doctrine_mongodb:
     document_managers:
         default:
             auto_mapping: true
+            mappings:
+                Shop:
+                    type: yml
+                    dir: "%kernel.root_dir%/../src/Shop/Infrastructure/Repository/Doctrine/config/mapping"
+                    prefix: Shop\Domain\Model
 
 # Swiftmailer Configuration
 swiftmailer:
