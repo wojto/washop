@@ -23,7 +23,7 @@ class UserController extends Controller
         );
 
         // get users
-        $users = $this->getDoctrine()
+        $users = $this->get('doctrine_mongodb')
             ->getRepository('Shop:User')
             ->getUsers(array(), $orderBy);
 

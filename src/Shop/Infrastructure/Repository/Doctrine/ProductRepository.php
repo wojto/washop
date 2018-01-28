@@ -2,7 +2,6 @@
 
 namespace Shop\Infrastructure\Repository\Doctrine;
 
-//use Doctrine\ORM\EntityRepository;
 use Doctrine\ODM\MongoDB\DocumentRepository;
 use Shop\Domain\Model\ProductId;
 use Shop\Domain\Model\ProductInterface;
@@ -56,17 +55,17 @@ class ProductRepository extends DocumentRepository implements ProductRepositoryI
 
         switch ($orderBy['field']) {
             case 'id':
-                $orderByField = 'p.id';
+                $orderByField = 'id';
                 break;
             case 'addedAt':
             default:
-                $orderByField = 'p.addedAt';
+                $orderByField = 'addedAt';
                 break;
         }
 
         $query = $this
             ->createQueryBuilder('p')
-            ->orderBy($orderByField, $orderBy['asc']);
+            ->sort($orderByField, $orderBy['asc']);
 
         return $query
             ->getQuery();

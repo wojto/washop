@@ -71,7 +71,7 @@ class ProductController extends Controller
         );
 
         // get products
-        $products = $this->getDoctrine()
+        $products = $this->get('doctrine_mongodb')
             ->getRepository('Shop:Product')
             ->getProducts(array(), $orderBy);
 

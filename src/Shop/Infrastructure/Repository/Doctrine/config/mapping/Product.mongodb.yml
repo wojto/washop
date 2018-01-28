@@ -1,4 +1,6 @@
 Shop\Domain\Model\Product:
+    db: washop
+    collection: product
     repositoryClass: Shop\Infrastructure\Repository\Doctrine\ProductRepository
     fields:
         id:

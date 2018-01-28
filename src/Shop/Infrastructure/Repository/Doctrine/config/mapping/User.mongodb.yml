@@ -1,4 +1,6 @@
 Shop\Domain\Model\User:
+    db: washop
+    collection: user
     repositoryClass: Shop\Infrastructure\Repository\Doctrine\UserRepository
     fields:
         id:

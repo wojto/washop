@@ -2,7 +2,7 @@
 
 namespace Shop\Infrastructure\Repository\Doctrine;
 
-use Doctrine\ORM\EntityRepository;
+use Doctrine\ODM\MongoDB\DocumentRepository;
 use Shop\Domain\Model\UserId;
 use Shop\Domain\Model\UserInterface;
 use Shop\Domain\Repository\UserRepositoryInterface;
@@ -12,7 +12,7 @@ use Shop\Domain\Repository\UserRepositoryInterface;
  *
  * @package Shop\Infrastructure\Repository\Doctrine
  */
-class UserRepository extends EntityRepository implements UserRepositoryInterface
+class UserRepository extends DocumentRepository implements UserRepositoryInterface
 {
     /**
      * Return user from database
@@ -55,16 +55,16 @@ class UserRepository extends EntityRepository implements UserRepositoryInterface
 
         switch ($orderBy['field']) {
             case 'addedAt':
-                $orderByField = 'u.addedAt';
+                $orderByField = 'addedAt';
                 break;
             case 'id':
             default:
-                $orderByField = 'u.id';
+                $orderByField = 'id';
                 break;
         }
 
         $query = $this->createQueryBuilder('u')
-            ->orderBy($orderByField, $orderBy['asc']);
+            ->sort($orderByField, $orderBy['asc']);
 
         return $query
             ->getQuery();
