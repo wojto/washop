@@ -3,12 +3,13 @@
 namespace Shop\Domain\Model;
 
 use Shop\Domain\Model\ValueObject\Email;
+use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface as UserSecurityInterface;
 
 /**
  * User class
  */
-class User implements UserInterface, UserSecurityInterface, \Serializable
+class User implements UserInterface, UserSecurityInterface, \Serializable, EquatableInterface
 {
     /**
      * @var UserId
@@ -179,5 +180,28 @@ class User implements UserInterface, UserSecurityInterface, \Serializable
     public function unserialize($serialized)
     {
         list ($this->id, $this->email, $this->password) = unserialize($serialized);
+    }
+
+    /**
+     * Check if user is the same
+     *
+     * @param UserInterface $user
+     * @return bool
+     */
+    public function isEqualTo(\Symfony\Component\Security\Core\User\UserInterface $user)
+    {
+        if ($this->password !== $user->getPassword()) {
+            return false;
+        }
+
+        if ($this->salt !== $user->getSalt()) {
+            return false;
+        }
+
+        if ($this->email !== $user->getEmail()) {
+            return false;
+        }
+
+        return true;
     }
 }
