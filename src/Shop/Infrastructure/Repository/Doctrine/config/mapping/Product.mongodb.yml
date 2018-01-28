@@ -1,0 +1,14 @@
+Shop\Domain\Model\Product:
+    fields:
+        id:
+            id:  true
+        name:
+            type: string
+        description:
+            type: string
+        priceAmount:
+            type: float
+        priceCurrency:
+            type: string
+        addedAt:
+            type: date

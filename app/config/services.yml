@@ -22,7 +22,7 @@ services:
     Shop\Domain\Command\NewProductHandler:
         arguments: ['@Shop\Infrastructure\Repository\Doctrine\ProductRepository', '@validator', '@Shop\Infrastructure\Transport\Mailer']
     Shop\Infrastructure\Repository\Doctrine\ProductRepository:
-        factory: ['@doctrine.orm.entity_manager', getRepository]
+        factory: ['@doctrine.odm.mongodb.document_manager', getRepository]
         arguments:
             - Shop\Domain\Model\Product
     Shop\Infrastructure\Transport\Mailer:

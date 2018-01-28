@@ -7,17 +7,17 @@ security:
             encode_as_base64: false
             iterations:       1
 
-    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        user_db:
-            entity:
+#        user_db:
+#            entity:
+#                class: Shop\Domain\Model\User
+#                property: email
+        my_mongo_provider:
+            mongodb:
                 class: Shop\Domain\Model\User
                 property: email
-#        in_memory:
-#            memory: ~
 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -39,6 +39,5 @@ security:
                 invalidate_session: false
 
     access_control:
-        # require ROLE_ADMIN for /admin*
         - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, roles: ROLE_USER }
