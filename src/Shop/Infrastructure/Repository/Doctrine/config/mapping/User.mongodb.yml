@@ -6,8 +6,11 @@ Shop\Domain\Model\User:
         id:
             type: id
             id:  true
+            strategy: NONE
         email:
             type: string
+            unique:
+                order: asc
         algorithm:
             type: string
         salt:
@@ -16,3 +19,15 @@ Shop\Domain\Model\User:
             type: string
         addedAt:
             type: date
+    indexes:
+        index1:
+            keys:
+                email: asc
+            options:
+                unique: true
+                dropDups: true
+                safe: true
+#    embedMany:
+#        products:
+#            targetDocument: Shop\Domain\Model\Product
+#            cascade: all

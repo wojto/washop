@@ -6,6 +6,7 @@ Shop\Domain\Model\Product:
         id:
             type: id
             id:  true
+            strategy: NONE
         name:
             type: string
         description:

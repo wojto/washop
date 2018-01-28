@@ -32,8 +32,8 @@ class ProductRepository extends DocumentRepository implements ProductRepositoryI
      */
     public function save(ProductInterface $product)
     {
-        $this->_em->persist($product);
-        $this->_em->flush($product);
+        $this->dm->persist($product);
+        $this->dm->flush($product);
     }
 
     /**
