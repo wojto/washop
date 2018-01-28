@@ -1,0 +1,21 @@
+/* 1 */
+{
+    "_id" : ObjectId("5a6e2e2272ea1e3fd586eae1"),
+    "id" : "dd109afd-a4dd-4b37-b926-bf4010d53240",
+    "email" : "codesensus@gmail.com",
+    "algorithm" : "sha1",
+    "salt" : null,
+    "password" : "7288edd0fc3ffcbe93a0cf06e3568e28521687bc",
+    "addedAt" : ISODate("2017-11-11T17:50:08.090Z")
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5a6e3b2672ea1e3fd586ec3a"),
+    "id" : "12453fc6-d08b-11e7-b902-28d244285bde",
+    "email" : "fake@example.com",
+    "algorithm" : "sha1",
+    "salt" : null,
+    "password" : "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3",
+    "addedAt" : ISODate("2017-11-19T12:17:42.000Z")
+}
