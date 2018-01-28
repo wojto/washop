@@ -32,8 +32,8 @@ class UserRepository extends DocumentRepository implements UserRepositoryInterfa
      */
     public function save(UserInterface $user)
     {
-        $this->_em->persist($user);
-        $this->_em->flush($user);
+        $this->dm->persist($user);
+        $this->dm->flush($user);
     }
 
     /**
