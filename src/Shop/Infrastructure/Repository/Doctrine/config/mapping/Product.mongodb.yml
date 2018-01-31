@@ -17,3 +17,8 @@ Shop\Domain\Model\Product:
             type: string
         addedAt:
             type: date
+        user:
+            reference: true
+            type: one
+            targetDocument: Shop\Domain\Model\User
+            cascade: all

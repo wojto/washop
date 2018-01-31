@@ -27,7 +27,3 @@ Shop\Domain\Model\User:
                 unique: true
                 dropDups: true
                 safe: true
-#    embedMany:
-#        products:
-#            targetDocument: Shop\Domain\Model\Product
-#            cascade: all
