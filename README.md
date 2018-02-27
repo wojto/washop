@@ -1,7 +1,13 @@
 WA shop
 =======
 
-Prosty projekt sklepu w Symfony 3.2.
+Prosty projekt sklepu w Symfony.
+
+Branche:  
+Symfony 3.2 + MySql: https://github.com/wojto/washop  
+Symfony 3.4 + MySql: https://github.com/wojto/washop/tree/symfony-3.4  
+Symfony 3.4 + MongoDB: https://github.com/wojto/washop/tree/mongodb  
+Symfony 4 + MySql: https://github.com/wojto/washop/tree/symfony-4  
 
 Autor: Wojciech Andruszkiewicz  
 E-mail: codesensus@gmail.com
