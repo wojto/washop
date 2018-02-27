@@ -1,0 +1,4 @@
+<aside id="main-menu" class="col-sm-2 no-float">
+    {% set menu = knp_menu_get('admin', [], {include_homepage: false}) %}
+    {{ knp_menu_render(menu, {'template': 'admin/default/knp_menu.html.twig'}) }}
+</aside>

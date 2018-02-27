@@ -1,79 +1,86 @@
 {
-    "name": "wojciechandruszkiewicz/washop",
-    "license": "proprietary",
+    "name": "symfony/symfony-demo",
+    "license": "MIT",
     "type": "project",
-    "description": "WA Shop",
+    "description": "Symfony Demo Application",
+    "require": {
+        "php": "^7.1.3",
+        "ext-pdo_sqlite": "*",
+        "doctrine/doctrine-bundle": "^1.6.10",
+        "doctrine/doctrine-fixtures-bundle": "^3.0",
+        "doctrine/doctrine-migrations-bundle": "^1.3",
+        "doctrine/orm": "^2.5.11",
+        "erusev/parsedown": "^1.6",
+        "ezyang/htmlpurifier": "^4.9",
+        "knplabs/knp-menu-bundle": "^2.2",
+        "knplabs/knp-paginator-bundle": "^2.7",
+        "moneyphp/money": "^3.1",
+        "ramsey/uuid-doctrine": "^1.4",
+        "sensio/framework-extra-bundle": "^5.0",
+        "sensiolabs/security-checker": "^4.1",
+        "symfony/asset": "^4.0",
+        "symfony/expression-language": "^4.0",
+        "symfony/flex": "^1.0",
+        "symfony/form": "^4.0",
+        "symfony/framework-bundle": "^4.0",
+        "symfony/monolog-bundle": "^3.1",
+        "symfony/polyfill-apcu": "^1.5",
+        "symfony/security-bundle": "^4.0",
+        "symfony/swiftmailer-bundle": "^3.1",
+        "symfony/translation": "^4.0",
+        "symfony/twig-bundle": "^4.0",
+        "symfony/validator": "^4.0",
+        "symfony/yaml": "^4.0",
+        "twig/extensions": "^1.5",
+        "white-october/pagerfanta-bundle": "^1.1"
+    },
+    "require-dev": {
+        "dama/doctrine-test-bundle": "^5.0",
+        "friendsofphp/php-cs-fixer": "^2.7",
+        "symfony/browser-kit": "^4.0",
+        "symfony/css-selector": "^4.0",
+        "symfony/debug-bundle": "^4.0",
+        "symfony/dotenv": "^4.0",
+        "symfony/phpunit-bridge": "^4.0",
+        "symfony/stopwatch": "^4.0",
+        "symfony/web-profiler-bundle": "^4.0",
+        "symfony/web-server-bundle": "^4.0"
+    },
+    "config": {
+        "platform": {
+            "php": "7.1.3"
+        },
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
     "autoload": {
-        "psr-4": { "": "src/" },
-        "classmap": [
-            "app/AppKernel.php",
-            "app/AppCache.php"
-        ]
+        "psr-4": {
+            "Admin\\": "src/Admin/",
+            "App\\": "src/App/",
+            "Shop\\": "src/Shop/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
-        },
-        "files": [
-            "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
-        ]
-    },
-    "require": {
-        "php": ">=5.5.9",
-        "doctrine/annotations": "^1.4",
-        "doctrine/doctrine-bundle": "^1.6",
-        "doctrine/doctrine-cache-bundle": "^1.2",
-        "doctrine/orm": "^2.5.6",
-        "incenteev/composer-parameter-handler": "^2.0",
-        "knplabs/knp-menu-bundle": "^2.1",
-        "knplabs/knp-menu": "^2.2",
-        "knplabs/knp-paginator-bundle": "^2.6",
-        "moneyphp/money": "^3.0",
-        "ramsey/uuid": "^3.7",
-        "ramsey/uuid-doctrine": "^1.4",
-        "sensio/distribution-bundle": "^5.0",
-        "sensio/framework-extra-bundle": "^3.0.2",
-        "symfony/assetic-bundle": "^2.8",
-        "symfony/monolog-bundle": "^3.0.2",
-        "symfony/polyfill-apcu": "^1.0",
-        "symfony/swiftmailer-bundle": "^2.3.10",
-        "symfony/symfony": "^3.2",
-        "twig/twig": "^1.0||^2.0"
-    },
-    "require-dev": {
-        "mockery/mockery": "^1.0",
-        "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+            "App\\Tests\\": "tests/"
+        }
     },
     "scripts": {
-        "symfony-scripts": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
-        ],
-        "post-install-cmd": [
-            "@symfony-scripts"
-        ],
-        "post-update-cmd": [
-            "@symfony-scripts"
-        ]
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
+            "security-checker security:check": "script"
+        }
     },
-    "config": {
-        "sort-packages": true
+    "conflict": {
+        "symfony/symfony": "*"
     },
     "extra": {
-        "symfony-app-dir": "app",
-        "symfony-bin-dir": "bin",
-        "symfony-var-dir": "var",
-        "symfony-web-dir": "web",
-        "symfony-tests-dir": "tests",
-        "symfony-assets-install": "relative",
-        "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
-        },
-        "branch-alias": null
+        "symfony": {
+            "id": "01BY8QJHBGTYRP06WQFNY99EKP",
+            "allow-contrib": true
+        }
     }
 }

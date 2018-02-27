@@ -20,7 +20,7 @@ class YmlValidator implements ValidatorInterface
     public function validate($value)
     {
         $validator = Validation::createValidatorBuilder()
-            ->addYamlMapping(__DIR__.'/../../../AdminBundle/Resources/config/validation.yml')
+            ->addYamlMapping(__DIR__.'/../../../Admin/Resources/config/validation.yml')
             ->getValidator();
 
         return $validator->validate($value);

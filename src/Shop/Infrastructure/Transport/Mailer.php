@@ -37,12 +37,11 @@ class Mailer implements MailerInterface
     public function sendNewProductEmail(ProductInterface $product)
     {
         // preparing and sending e-mail
-        $message = \Swift_Message::newInstance()
-            ->setSubject('Dodano nowy produkt do bazy')
+        $message = (new \Swift_Message('Dodano nowy produkt do bazy'))
             ->setFrom('codesensus@gmail.com')
             ->setTo('fake@example.com')
             ->setBody(
-                $this->twig->render('AdminBundle:product:newProductEmail.txt.twig', array('product' => $product))
+                $this->twig->render('admin/product/newProductEmail.txt.twig', array('product' => $product))
             );
 
         $this->send($message);

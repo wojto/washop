@@ -44,7 +44,7 @@ class User implements UserInterface, UserSecurityInterface, \Serializable
      * User constructor.
      *
      * @param UserId                   $id
-     * @param \Shop\Domain\Model\Email $email
+     * @param \Shop\Domain\Model\ValueObject\Email $email
      * @param string                   $algorithm
      * @param string                   $salt
      * @param string                   $password

@@ -1,0 +1,87 @@
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'pl'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false       # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/App/*'
+        exclude: '../src/App/{Tests}'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/App/Controller'
+        tags: ['controller.service_arguments']
+
+    Admin\Controller\:
+        resource: '../src/Admin/Controller'
+        tags: ['controller.service_arguments']
+
+    Admin\Controller\SecurityController:
+        public: true
+        bind:
+            $authenticationUtils: '@security.authentication_utils'
+
+    Admin\Controller\UserController:
+        public: true
+        bind:
+            $userRepository: '@Shop\Infrastructure\Repository\Doctrine\UserRepository'
+
+    Admin\Controller\ProductController:
+        public: true
+        bind:
+            $productRepository: '@Shop\Infrastructure\Repository\Doctrine\ProductRepository'
+            $newProductHandler: '@Shop\Domain\Command\NewProductHandler'
+            $translator: '@translator'
+
+    App\Controller\ShopController:
+        public: true
+        bind:
+            $productRepository: '@Shop\Infrastructure\Repository\Doctrine\ProductRepository'
+
+    App\Menu\MenuBuilder:
+        arguments: ['@knp_menu.factory', '@security.authorization_checker', '@request_stack']
+        tags:
+            - { name: knp_menu.menu_builder, method: createAdminMenu, alias: admin }
+
+    App\Form\PriceType:
+        arguments: [['PLN', 'EUR', 'USD']]
+        tags: ['form.type']
+
+    Shop\:
+        resource: '../src/Shop/*'
+        exclude: '../src/Shop/*/{Domain,Infrastructure}'
+
+    Shop\Infrastructure\Repository\Doctrine\ProductRepository:
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - Shop\Domain\Model\Product
+
+    Shop\Infrastructure\Repository\Doctrine\UserRepository:
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - Shop\Domain\Model\User
+
+    App\Twig\MoneyFormatExtension:
+        public: false
+        tags: ['twig.extension']
+
+    Shop\Domain\Command\NewProductHandler:
+        arguments: ['@Shop\Infrastructure\Repository\Doctrine\ProductRepository', '@validator', '@Shop\Infrastructure\Transport\Mailer']
+
+    Shop\Infrastructure\Transport\Mailer:
+        arguments: ['@swiftmailer.mailer', '@twig']

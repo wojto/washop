@@ -1,7 +1,0 @@
-php bin/console doctrine:mapping:import --force AppBundle yml
-php bin/console doctrine:mapping:convert annotation ./src -f
-php bin/console doctrine:generate:entities AppBundle
-
-php bin/console translation:update --force --output-format=xlf pl AdminBundle
-php bin/console translation:update --force --output-format=xlf pl ShopBundle
-php bin/console translation:update --force --output-format=xlf pl AppBundle
