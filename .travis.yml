@@ -17,6 +17,7 @@ env:
 install:
     - export SYMFONY_DEPRECATIONS_HELPER=weak
     - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then composer require --dev --no-update friendsofphp/php-cs-fixer; fi;
+    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then composer require --dev --no-update phpstan/phpstan; fi;
     # To be removed when this issue will be resolved: https://github.com/composer/composer/issues/5355
     - if [[ "$COMPOSER_FLAGS" == *"--prefer-lowest"* ]]; then composer update --prefer-dist --no-interaction --prefer-stable --quiet; fi
     - composer install --no-ansi --no-interaction --no-progress
