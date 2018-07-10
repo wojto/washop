@@ -1,0 +1,13 @@
+language: php
+php:
+  - 7.1
+
+before_script:
+  #ignore deprecated functions
+  - export SYMFONY_DEPRECATIONS_HELPER=weak
+  #symfony3 is used if var folder exists, symfony2 otherwise
+  - SYMFONY_ENV=test composer install --no-ansi --no-interaction --no-progress
+
+script:
+  - vendor/bin/simple-phpunit
+  - vendor/bin/phpcs
