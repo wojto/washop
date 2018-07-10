@@ -7,6 +7,7 @@ before_script:
   - export SYMFONY_DEPRECATIONS_HELPER=weak
   #symfony3 is used if var folder exists, symfony2 otherwise
   - SYMFONY_ENV=test composer install --no-ansi --no-interaction --no-progress
+  - composer global require "squizlabs/php_codesniffer=*"
 
 script:
   - vendor/bin/simple-phpunit
