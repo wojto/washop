@@ -4,7 +4,7 @@ namespace Shop\Infrastructure\Transport;
 
 use Shop\Domain\Model\ProductInterface;
 use Shop\Domain\Transport\MailerInterface;
-use Symfony\Bridge\Twig\TwigEngine;
+use Symfony\Bundle\TwigBundle\TwigEngine;
 
 /**
  * Class Mailer for sending e-mails
