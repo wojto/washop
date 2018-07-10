@@ -1,14 +1,32 @@
 language: php
 php:
   - 7.1
+sudo: false
+cache:
+    directories:
+        - $HOME/.composer/cache/files
+        - $HOME/symfony-bridge/.phpunit
 
-before_script:
-  #ignore deprecated functions
-  - export SYMFONY_DEPRECATIONS_HELPER=weak
-  #symfony3 is used if var folder exists, symfony2 otherwise
-  - SYMFONY_ENV=test composer install --no-ansi --no-interaction --no-progress
-  - composer global require "squizlabs/php_codesniffer=*"
+env:
+    global:
+        - CHECK_PHP_SYNTAX="false"
+        - COVERAGE="false"
+        - PHPUNIT_FLAGS="-v"
+        - SYMFONY_PHPUNIT_DIR="$HOME/symfony-bridge/.phpunit"
+
+install:
+    - export SYMFONY_DEPRECATIONS_HELPER=weak
+    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then composer require --dev --no-update friendsofphp/php-cs-fixer; fi;
+    # To be removed when this issue will be resolved: https://github.com/composer/composer/issues/5355
+    - if [[ "$COMPOSER_FLAGS" == *"--prefer-lowest"* ]]; then composer update --prefer-dist --no-interaction --prefer-stable --quiet; fi
+    - composer install --no-ansi --no-interaction --no-progress
+    - ./vendor/bin/simple-phpunit install
 
 script:
-  - vendor/bin/simple-phpunit
-  - vendor/bin/phpcs
+    - composer validate --strict --no-check-lock
+    - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
+    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then php vendor/bin/php-cs-fixer --no-interaction --dry-run --diff -v fix; fi;
+
+#script:
+#  - vendor/bin/simple-phpunit
+#  - vendor/bin/phpcs
