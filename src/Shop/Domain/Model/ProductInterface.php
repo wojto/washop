@@ -2,7 +2,6 @@
 
 namespace Shop\Domain\Model;
 
-use Shop\Domain\Model\User;
 use Money\Money;
 
 /**
@@ -38,7 +37,7 @@ interface ProductInterface
     public function getAddedAt(): \DateTime;
 
     /**
-     * @return User
+     * @return UserInterface
      */
     public function getUser(): User;
 }

@@ -6,7 +6,6 @@ use Shop\Domain\Model\ProductId;
 use Shop\Domain\Transport\MailerInterface;
 use Shop\Domain\Model\Product;
 use Shop\Domain\Exception\InvalidProductException;
-use Shop\Domain\Command\NewProductCommand;
 use Shop\Domain\Repository\ProductRepositoryInterface;
 use Shop\Domain\Validator\ValidatorInterface;
 use Shop\Infrastructure\Repository\Doctrine\ProductRepository;
@@ -24,7 +23,7 @@ class NewProductHandler
     private $productRepository;
 
     /**
-     * @var Validator Interface
+     * @var ValidatorInterface
      */
     private $validator;
 
@@ -37,8 +36,8 @@ class NewProductHandler
      * NewProductHandler constructor
      *
      * @param ProductRepositoryInterface $productRepository
-     * @param $validator
-     * @param MailerInterface            $mailer
+     * @param ValidatorInterface $validator
+     * @param MailerInterface $mailer
      */
     public function __construct(
         ProductRepositoryInterface $productRepository,

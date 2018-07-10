@@ -2,8 +2,6 @@
 
 namespace Shop\Domain\Model;
 
-use Shop\Domain\Model\ProductInterface;
-use Shop\Domain\Model\User;
 use Money\Money;
 use Money\Currency;
 
@@ -43,19 +41,19 @@ class Product implements ProductInterface
     private $addedAt;
 
     /**
-     * @var User
+     * @var UserInterface
      */
     private $user;
 
     /**
      * Product constructor.
      *
-     * @param ProductId               $id
-     * @param string                  $name
-     * @param string                  $description
-     * @param Money                   $price
-     * @param \DateTime               $addedAt
-     * @param \Shop\Domain\Model\User $user
+     * @param ProductId     $id
+     * @param string        $name
+     * @param string        $description
+     * @param Money         $price
+     * @param \DateTime     $addedAt
+     * @param UserInterface $user
      */
     public function __construct(
         ProductId $id,
@@ -63,7 +61,7 @@ class Product implements ProductInterface
         string $description,
         Money $price,
         \DateTime $addedAt,
-        User $user
+        UserInterface $user
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -151,7 +149,7 @@ class Product implements ProductInterface
     /**
      * Get user
      *
-     * @return User
+     * @return UserInterface
      */
     public function getUser(): User
     {

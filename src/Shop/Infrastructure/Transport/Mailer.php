@@ -4,6 +4,7 @@ namespace Shop\Infrastructure\Transport;
 
 use Shop\Domain\Model\ProductInterface;
 use Shop\Domain\Transport\MailerInterface;
+use Symfony\Bridge\Twig\TwigEngine;
 
 /**
  * Class Mailer for sending e-mails
@@ -15,15 +16,19 @@ class Mailer implements MailerInterface
     /**
      * Used mailer
      *
-     * @var Swift_Mailer|\Swift_Mailer
+     * @var \Swift_Mailer
      */
     private $mailer;
 
     /**
-     * Mailer constructor
-     *
-     * @param $mailer Swift_Mailer
-     * @param $twig TwigEngine
+     * @var TwigEngine
+     */
+    private $twig;
+
+    /**
+     * Mailer constructor.
+     * @param \Swift_Mailer $mailer
+     * @param \Twig_Environment $twig
      */
     public function __construct(\Swift_Mailer $mailer, \Twig_Environment $twig)
     {
@@ -32,7 +37,11 @@ class Mailer implements MailerInterface
     }
 
     /**
-     * @param Product $product
+     * @param ProductInterface $product
+     * @throws \Twig\Error\Error
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
      */
     public function sendNewProductEmail(ProductInterface $product)
     {
