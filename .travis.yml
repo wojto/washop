@@ -16,8 +16,8 @@ env:
 
 install:
     - export SYMFONY_DEPRECATIONS_HELPER=weak
-    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then composer require --dev --no-update friendsofphp/php-cs-fixer; fi;
-    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then composer require --dev --no-update phpstan/phpstan; fi;
+    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then composer require --dev friendsofphp/php-cs-fixer; fi;
+    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then composer require --dev phpstan/phpstan; fi;
     # To be removed when this issue will be resolved: https://github.com/composer/composer/issues/5355
     - if [[ "$COMPOSER_FLAGS" == *"--prefer-lowest"* ]]; then composer update --prefer-dist --no-interaction --prefer-stable --quiet; fi
     - composer install --no-ansi --no-interaction --no-progress
@@ -26,8 +26,8 @@ install:
 script:
     #- composer validate --strict --no-check-lock
     - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
-#    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then vendor/bin/php-cs-fixer fix --dry-run --verbose --diff src/; fi;
-    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then vendor/bin/phpstan analyse src tests; fi;
+#    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then ./vendor/bin/php-cs-fixer fix --dry-run --verbose --diff src/; fi;
+    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then ./vendor/bin/phpstan analyse src tests; fi;
 
 #script:
 #  - vendor/bin/simple-phpunit
